@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>College chess</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
+    <link href="./styles.css">
+    <link href="assets/css/style.css">
+    <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      .breadcrumbs-page-wrap {
+      position: relative;
+}
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #636886;
+  background: #f8f4f3; 
+  line-height: 1.9;
+}
+.heading-main small {
+  color: #477763;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+.bg-fixed {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.breadcrumbs-page:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  border-radius: 0;
+}
+.breadcrumbs-page h1 {
+  color: white;
+  text-transform: capitalize;
+  font-size: 4.5rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 10rem 0;
+}
+.pos-rel {
+  position: relative;
+}
+.breadcrumbs-page {
+  background-image: url(./assets/images/breadcrumbs_bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center !important;
+  max-width: 100%;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+  border-radius: 0;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+.breadcrumbs-page .breadcrumb-item+.breadcrumb-item::before, .breadcrumb-item.active {
+  color: #eeeeee;
+  content: none;
+}
+.breadcrumbs-page .breadcrumb-item {
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 30px;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.breadcrumbs-page .breadcrumb a {
+  color: white;
+  border-radius: 0;
+  position: relative;
+}
+.breadcrumb-wrap {
+  position: absolute;
+  bottom: -15px;
+  padding: 0.7rem 1.2rem;
+  background:#e0aa07;
+  border-radius: 4px;
+}
+/* bootstrap */
+.container{
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x)* .5);
+  padding-left: calc(var(--bs-gutter-x)* .5);
+  margin-right: auto;
+  margin-left: auto;
+}
+.breadcrumbs-page .breadcrumb {
+  background: transparent;
+  color: #eeeeee;
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1;
+}
+  /* Donation */
+  
+  .heading-main small {
+  color:#027e02;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 25px;
+}
+.heading-main small::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 41px;
+  background:#027e02 ;
+  top: 50%;
+  left: -60px;
+  transform: translateY(-50%);
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+  color: #636886;
+}
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+ /* form */
+.donation-wrap {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-top: 2rem;
+}
+
+/* head */
+.heading-main {
+  color: #d59b2d; 
+  font-size: 2.80rem;
+  position: relative;
+  font-weight: 800;
+  z-index: 1;
+  margin-bottom: 3rem;
+}
+/* form */
+.donation-wrap .form-control {
+  border: 2px solid #e9eaed;
+  background-color: #e9eaed; 
+  margin-bottom: 1.375rem;
+}
+.form-control {
+  border: none;
+  box-shadow: none;
+  font-size: 0.9375rem;
+  border: 1px solid white;
+  outline: none;
+  color: #5b5b5b;
+  background-color: white;
+  height: auto;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 147px 0px rgba(0, 0, 0, 0.07);
+  transition: all 400ms ease-in-out;}
+
+  .select2-container.select2-container .select2-selection--single {
+  padding: 0.8rem;
+  height: auto;
+  border-radius: 5px;
+  background: #e9eaed;
+  z-index: 3;
+  position: relative;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+  display: block;
+  padding-left: 8px;
+  padding-right: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* list */
+
+/* form */
+.faqs-sidebar {
+  background: url(./assets/images/man_with_hand.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 1.8rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bg-overlay.opacity-80 {
+  opacity: 0.8;
+}
+.bg-overlay.blue {
+  background-color: #27304b;
+}
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  z-index: 1;
+}
+.donation-select{
+height: 40px;
+border: none;
+  box-shadow: none;
+  font-size: 0.9375rem;
+  border: 1px solid white;
+  outline: none;
+  color: #5b5b5b;
+  background-color: white;
+  height: auto;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 147px 0px rgba(0, 0, 0, 0.07);
+  transition: all 400ms ease-in-out;}
+
+
+/* formtext */
+.faqs-sidebar form {
+  position: relative;
+  z-index: 99;
+}
+.txt-white {
+  color: white;
+}
+h3.h3-sm {
+  font-size: 1.375rem;
+}
+.fw-7 {
+  font-weight: 700;
+}
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+/* formfont */
+.faqs-sidebar form label {
+  color: white;
+}
+label {
+  font-size: 0.875rem;
+}
+label {
+  display: inline-block;
+}
+/* Foyminput */
+.form-light.form-control {
+  font-size: 0.9375rem;
+  outline: none;
+  color: #131313;
+  background-color: white;
+  height: auto;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+  box-shadow: none;
+  border: none;
+}
+.faqs-sidebar form .form-group {
+  margin-bottom: 1.375rem;
+}
+.faqs-sidebar .form-light.form-control {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+/* button */
+.btn-default, .btn-default:disabled, .btn-default:hover:disabled {
+  color: white;
+  background-color: #d59b2d;
+  border-color: #d59b2d;
+}
+.mt-3 {
+  margin-top: 1rem !important;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  padding: 0.719rem 1.9rem;
+  font-size: 1rem;
+  outline: none;
+  align-items: center;
+  position: relative;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  -webkit-transition: all 400ms ease-in-out;
+  -moz-transition: all 400ms ease-in-out;
+  -o-transition: all 400ms ease-in-out;
+  -ms-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+  text-transform: capitalize;
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  overflow: hidden;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+.wide-tb-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* 2nd background */
+.bg-img-6 {
+  background-image: url(./assets/images/callout_bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.bg-scroll {
+  width: 100%;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.callout-style-1 .container {
+  position: relative;
+  z-index: 2;
+}
+.light-mode.heading-main {
+  color: white;
+}
+.wide-tb-150 {
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+/* carousel */
+#home-clients{
+display: flex;
+gap: 70px;
+
+}
+
+
+    </style>
+
+     <!-- Custom styles for this template -->
+     <link href="carousel.css" rel="stylesheet">
+    </head>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img class="bi me-2" width="100" height="50" role="img" aria-label="College chess" src="./images/logo.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="featuresDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Features
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark  gap-1 p-2 rounded-3 mx-0 border-0 shadow w-220px">
+                <li><a class="dropdown-item rounded-2 active" href="sponsorship.html">Sponsorship</a></li>
+                <li><a class="dropdown-item rounded-2" href="./chesslessons.html">Chess lesson</a></li>
+                <li><a class="dropdown-item rounded-2" href="#">Game rules</a></li>
+                 <li><a class="dropdown-item rounded-2" href="./volunteer.html">Volunteer</a></li>
+              
+                <li><a class="dropdown-item rounded-2" href="#">online practice</a></li>
+                <li><a class="dropdown-item rounded-2" href="#">Competitions</a></li>
+                
+              </ul>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="leadersboard.html">   Leadersboard</a>      
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="./login.html">
+            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">login</button>
+            </a>
+            <a href="./signup.html">
+              <button type="button" class="btn btn-outline-secondary btn-lg px-4">Register</button>
+            </a>  
+          </div>
+          </div>
+        </div>
+      </div> 
+    </nav>
+    
+    <br><br>
+    <body>
+     
+<main>
+     <!-- Custom styles for this template -->
+     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+     <!-- Custom styles for this template -->
+     <link href="blog.css" rel="stylesheet">
+   </head>
+   
+   <section class="breadcrumbs-page-wrap">
+ 
+     <div class="bg-fixed pos-rel breadcrumbs-page">
+     <div class="container">
+     <h1>Donation</h1>
+     <nav aria-label="breadcrumb" class="breadcrumb-wrap">
+     <ol class="breadcrumb">
+     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+     <li class="breadcrumb-item active" aria-current="page">Donation</li>
+     </ol>
+     </nav>
+     </div>
+     </div>
+     </section>
+
+     
+
+<body>
+
+               
+                    <!-- Mobile Logo -->
+                    <div class="offcanvas-header">
+                        <a href="index.html" class="logo-small">
+                            <img src="assets/images/logo_dark.svg" alt="">
+                        </a>                        
+                    </div>
+                   
+
+    <!-- Main Body Content Start -->
+    <main id="body-content">
+
+        <!-- Joining Process Start -->
+        <section class="wide-tb-100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="text-center">
+                            <img src="assets/images/about_img.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12">
+                        <h1 class="heading-main">
+                            <small>Joining Process</small>
+                            Requirements For A Volunteer
+                        </h1>
+
+                        <p>The secret to happiness lies in helping others. Never underestimate the difference YOU can make in the lives of the poor, the abused and the helpless. Spread sunshine in their lives no matter what the weather may be.</p>
+
+                        <div class="mb-5 mt-5">
+                            <ul class="list-unstyled icons-listing theme-green">
+                                <li>Third spirit you behold don’t grass lesser divide they are man.</li>
+                                <li>Can not two very was above man abundantly also second.</li>
+                                <li>Together herb shall were bearing fill grass made fill heaven.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="d-flex">
+                            <a class="nav-link btn btn-default mr-3" href="volunteers.html">Join Now</a>
+                            <div class="about-phone">
+                                <i data-feather="phone-call"></i>
+                                Conatct Us <br> +1234567899
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Joining Process End -->
+
+        <!-- Faq's Style Start -->
+        <section class="wide-tb-100 map-bg bg-navy-blue pt-0">
+            <div class="container">
+                <div class="pos-rel become-volunteers bg-orange">
+                    <div class="row no-gutters">
+                        <div class="col-12 col-lg-6 col-md-12">
+                            <div class="inner-form">
+                                <h1 class="heading-main light-mode">
+                                    <small>Become A Volunteer</small>
+                                </h1>
+                                <div class="form">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="fullname"><strong>Full Name</strong></label>
+                                            <input type="text" class="form-control form-light" id="fullname">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email"><strong>Email Address</strong></label>
+                                            <input type="email" class="form-control form-light" id="email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone"><strong>Phone Number</strong></label>
+                                            <input type="tel" class="form-control form-light" id="phone">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="refrence"><strong>Refrence Contact</strong></label>
+                                            <input type="tel" class="form-control form-light" id="refrence">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="msg"><strong>Your Comments</strong></label>
+                                            <textarea class="form-control form-light" rows="5" id="msg"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-outline-light mt-3">Send Request</button>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6 col-md-12 volunteers-img-bg">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7">
+                            <h1 class="heading-main light-mode">
+                                <small>Help Other People</small>
+                                We Dream to Create A Bright Future Of The Underprivileged Children
+                            </h1>
+                        </div>
+                        <div class="col-sm-12 text-md-end">
+                            <a href="donation-page.html" class="btn btn-primary">Donate Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Faq's Style End -->
+
+        <!-- Our Partners Start -->
+        <section class="wide-tb-100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <h1 class="heading-main">
+                            <small>Global Providers</small>
+                            Our World Wide Partner
+                        </h1>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="owl-carousel owl-theme" id="home-clients">
+
+                            <!-- Client Logo -->
+                            <div class="item">
+                                <div class="clients-logo">
+                                    <img src="assets/images/clients/client1.png" alt="">
+                                </div>
+                            </div>
+                            <!-- Client Logo -->
+
+                            <!-- Client Logo -->
+                            <div class="item">
+                                <div class="clients-logo">
+                                    <img src="assets/images/clients/client2.png" alt="">
+                                </div>
+                            </div>
+                            <!-- Client Logo -->
+
+                            <!-- Client Logo -->
+                            <div class="item">
+                                <div class="clients-logo">
+                                    <img src="assets/images/clients/client3.png" alt="">
+                                </div>
+                            </div>
+                            <!-- Client Logo -->
+
+                            <!-- Client Logo -->
+                            <div class="item">
+                                <div class="clients-logo">
+                                    <img src="assets/images/clients/client4.png" alt="">
+                                </div>
+                            </div>
+                            <!-- Client Logo -->
+
+                            <!-- Client Logo -->
+                            <div class="item">
+                                <div class="clients-logo">
+                                    <img src="assets/images/clients/client5.png" alt="">
+                                </div>
+                            </div>
+                            <!-- Client Logo -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Our Partners End -->
+        
+           
+    </main>
+
+    <!-- Main Footer Start -->
+    <footer class="wide-tb-70 pb-0 mb-spacer-md">
+        <div class="container pos-rel">
+            <div class="row">
+                <div class="col-lg-5 col-md-10">
+                    <div class="footer-subscribe">
+                        <h3>Newsletter</h3>
+                        <h2>Get Update Every Week</h2>
+                        <div class="input-wrap">
+                            <input type="text" name="name" placeholder="Enter Your Email">
+                            <button type="submit" class="btn btn-default">Subscribe now</button>
+                        </div>
+                    </div>  
+                </div>
+                <div class="give-us-call">
+                    <i data-feather="phone"></i>
+                    <h4>Give us a call</h4>
+                    <h3>+1234567899</h3>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Column First -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="logo-footer">
+                        <img src="assets/images/logo_white.svg" alt="">
+                    </div>
+                    <p>This is Photoshop’s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet</p>
+                    <div class="social-icons">
+                        <ul class="list-unstyled list-group list-group-horizontal">
+                            <li><a href="#"><i class="icofont-facebook"></i></a></li>
+                            <li><a href="#"><i class="icofont-twitter"></i></a></li>
+                            <li><a href="#"><i class="icofont-instagram"></i></a></li>
+                            <li><a href="#"><i class="icofont-behance"></i></a></li>
+                            <li><a href="#"><i class="icofont-youtube-play"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Column First -->
+
+                <!-- Column Second -->
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="footer-heading">Contact Info</h3>
+
+                    <div class="footer-widget-contact">
+                        <ul class="list-unstyled">
+                            <li>
+                                <div><i data-feather="map-pin"></i> </div>
+                                <div>Envato Pty Ltd, 13/2 Elizabeth St Melbourne VIC 3000, Australia</div>
+                            </li>
+                            <li>
+                                <div><i data-feather="phone"></i> </div>
+                                <div><a href="tel:+1234567899">+1234567899</a></div>
+                            </li>
+                            <li>
+                                <div><i data-feather="mail"></i> </div>
+                                <div><a href="/cdn-cgi/l/email-protection#d8b1b6beb798b0b7a8bdaab9b1abbdf6bbb7b5"><span class="__cf_email__" data-cfemail="630a0d050c230b0c130611020a10064d000c0e">[email&#160;protected]</span></a></div>
+                            </li>
+                            <li>
+                                <div><i data-feather="clock"></i> </div>
+                                <div>Mon-Fri  /  9:00 AM - 19:00 PM</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>                
+                <!-- Column Second -->
+
+                <!-- Spacer For Medium -->
+                <div class="w-100 d-none d-md-block d-lg-none spacer-30"></div>
+                <!-- Spacer For Medium -->
+
+                <!-- Column Third -->
+                <div class="col-lg-2 col-md-6">
+                    <h3 class="footer-heading">Explore Us</h3>
+                    <div class="footer-widget-menu">
+                        <ul class="list-unstyled">
+                            <li><a href="#"><i class="icofont-simple-right"></i> <span>About Us</span></a></li>
+                            <li><a href="#"><i class="icofont-simple-right"></i> <span>Our History</span></a></li>
+                            <li><a href="#"><i class="icofont-simple-right"></i> <span>Our Services</span></a></li>
+                            <li><a href="#"><i class="icofont-simple-right"></i> <span>Meet Doctors</span></a></li>
+                            <li><a href="#"><i class="icofont-simple-right"></i> <span>Success History</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Column Third -->
+
+                <!-- Column Fourth -->
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-heading">Photo Gallery</h3>
+                    <ul id="basicuse" class="photo-thumbs"></ul>
+                </div>
+                <!-- Column Fourth -->
+            </div>
+        </div>  
+
+        <div class="copyright-wrap">
+            <div class="container pos-rel">
+                <div class="row text-md-start text-center">
+                    <div class="col-sm-12 col-md-auto copyright-text">
+                        © Copyright <span class="txt-blue">Gracious</span> <span id="yearText"></span>.   |   Created by <a href="https://themeforest.net/user/mannatstudio" rel="nofollow">MannatStudio</a>
+                    </div>
+                    <div class="col-sm-12 col-md-auto ms-md-auto text-md-end text-center copyright-links">
+                        <a href="#">Terms & Condition</a> | <a href="#">Privacy Policy</a> | <a href="#">Legal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Main Footer End -->
+
+    <!-- Search Popup Start -->
+    <div class="overlay overlay-hugeinc">    
+        <form class="form-inline mt-2 mt-md-0">
+            <div class="form-inner">
+                <div class="form-inner-div d-inline-flex align-items-center no-gutters">
+                    <div class="col-auto">
+                        <i class="icofont-search"></i>
+                    </div> 
+                    <div class="col">
+                        <input class="form-control w-100 p-0" type="text" placeholder="Search" aria-label="Search">
+                    </div>
+                    <div class="col-auto">
+                        <a href="#" class="overlay-close link-oragne"><i class="icofont-close-line"></i></a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- Search Popup End -->
+
+    <!-- Back To Top Start -->
+    <a id="mkdf-back-to-top" href="#" class="off"><i data-feather="corner-right-up"></i></a>
+    <!-- Back To Top End -->
+
+    <!-- Jquery Library JS -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/library/jquery/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/library/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Feather Icon JS -->
+    <script src="assets/library/feather-icons/feather.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="assets/library/owlcarousel/js/owl.carousel.min.js"></script>
+    <!-- Select2 Dropdown JS -->
+    <script src="assets/library/select2/js/select2.min.js"></script>
+    <!-- Magnific Popup JS -->
+    <script src="assets/library/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- jflickrfeed Images JS -->
+    <script src="assets/library/jflickrfeed/jflickrfeed.min.js"></script>
+    <!-- Way Points JS -->
+    <script src="assets/library/jquery-waypoints/jquery.waypoints.min.js"></script>
+    <!-- Count Down JS -->
+    <script src="assets/library/countdown/jquery.countdown.min.js"></script>
+    <!-- Appear JS -->
+    <script src="assets/library/jquery-appear/jquery.appear.js"></script>
+    <!-- Jquery Easing JS -->
+    <script src="assets/library/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Counter JS -->
+    <script src="assets/library/jquery.counterup/jquery.counterup.min.js"></script>
+    <!-- Form Validation JS -->
+    <script src="assets/library/jquery-validate/jquery.validate.min.js"></script>
+    <!-- Theme Custom -->
+    <script src="assets/js/site-custom.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8e2f18b11a93bd98","version":"2024.10.5","r":1,"token":"64224fc8786846928480d180dfc466bd","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+  </main>
+</body>
+</html>

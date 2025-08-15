@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>College chess</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
+    <link href="./styles.css">
+    <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html">
+        <img class="bi me-2" width="100" height="50" role="img" aria-label="College chess" src="./images/logo.png" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="featuresDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Features
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark  gap-1 p-2 rounded-3 mx-0 border-0 shadow w-220px">
+              <li><a class="dropdown-item rounded-2 active" href="#">Sponsorship</a></li>
+              <li><a class="dropdown-item rounded-2" href="./chesslessons.html">Chess lesson</a></li>
+              <li><a class="dropdown-item rounded-2" href="#">Game rules</a></li>
+              <li><a class="dropdown-item rounded-2" href="#">Find tutor</a></li>
+              <li><a class="dropdown-item rounded-2" href="#">online practice</a></li>
+              <li><a class="dropdown-item rounded-2" href="#">Competitions</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="leadersboard.html">leadersboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <a href="./login.html">
+          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">login</button>
+          </a>
+          <a href="./signup.html">
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Register</button>
+          </a>  
+        </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <style>
+      body {
+        font-family: 'IBM Plex Mono', monospace;
+        background-color: #000;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .container {
+        width: 90%;
+        margin: 40px 0;
+      }
+    
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    
+      .header h1 {
+        font-family: 'Raleway', sans-serif;
+        font-size: 36px;
+        font-weight: bold;
+        margin: 0;
+      }
+    
+      .leaderboard {
+        width: 100%;
+        border-collapse: collapse;
+      }
+    
+      .leaderboard th,
+      .leaderboard td {
+        border: 1px solid #333;
+        padding: 12px;
+        text-align: center;
+      }
+    
+      .leaderboard th {
+        background-color: #1b1b1b;
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
+      }
+    
+      .leaderboard tr:nth-child(even) {
+        background-color: #1b1b1b;
+      }
+    
+      .leaderboard tr:nth-child(odd) {
+        background-color: #333;
+      }
+    
+      .leaderboard img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    
+      @media (max-width: 768px) {
+        .container {
+          width: 100%;
+        }
+    
+        .header h1 {
+          font-size: 28px;
+        }
+    
+        .leaderboard th,
+        .leaderboard td {
+          padding: 8px;
+        }
+      }
+    </style>
+    </head>
+    
+    <body>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="container">
+        <div class="header">
+          <img src="./images/chess2.png" alt="" width="120px" height="80px">
+
+          <h1>College Chess Leaderboard</h1>
+        </div>
+        <table class="leaderboard">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Player</th>
+              <th>Name</th>
+              <th>Rating</th>
+              <th>Points</th>
+              <th>Institution</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Demo Data for 30 Players -->
+            <tr>
+              <td>1</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 1"></td>
+              <td>Player 1</td>
+              <td>2500</td>
+              <td>100</td>
+              <td>Institution A</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 2"></td>
+              <td>Player 2</td>
+              <td>2450</td>
+              <td>98</td>
+              <td>Institution B</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 3"></td>
+              <td>Player 3</td>
+              <td>2400</td>
+              <td>96</td>
+              <td>Institution C</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 4"></td>
+              <td>Player 4</td>
+              <td>2350</td>
+              <td>94</td>
+              <td>Institution D</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 5"></td>
+              <td>Player 5</td>
+              <td>2300</td>
+              <td>92</td>
+              <td>Institution E</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 6"></td>
+              <td>Player 6</td>
+              <td>2250</td>
+              <td>90</td>
+              <td>Institution F</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 7"></td>
+              <td>Player 7</td>
+              <td>2200</td>
+              <td>88</td>
+              <td>Institution G</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 8"></td>
+              <td>Player 8</td>
+              <td>2150</td>
+              <td>86</td>
+              <td>Institution H</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 9"></td>
+              <td>Player 9</td>
+              <td>2100</td>
+              <td>84</td>
+              <td>Institution I</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 10"></td>
+              <td>Player 10</td>
+              <td>2050</td>
+              <td>82</td>
+              <td>Institution J</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 11"></td>
+              <td>Player 11</td>
+              <td>2000</td>
+              <td>80</td>
+              <td>Institution K</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 12"></td>
+              <td>Player 12</td>
+              <td>1950</td>
+              <td>78</td>
+              <td>Institution L</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 13"></td>
+              <td>Player 13</td>
+              <td>1900</td>
+              <td>76</td>
+              <td>Institution M</td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 14"></td>
+              <td>Player 14</td>
+              <td>1850</td>
+              <td>74</td>
+              <td>Institution N</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 15"></td>
+              <td>Player 15</td>
+              <td>1800</td>
+              <td>72</td>
+              <td>Institution O</td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 16"></td>
+              <td>Player 16</td>
+              <td>1750</td>
+              <td>70</td>
+              <td>Institution P</td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 17"></td>
+              <td>Player 17</td>
+              <td>1700</td>
+              <td>68</td>
+              <td>Institution Q</td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 18"></td>
+              <td>Player 18</td>
+              <td>1650</td>
+              <td>66</td>
+              <td>Institution R</td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 19"></td>
+              <td>Player 19</td>
+              <td>1600</td>
+              <td>64</td>
+              <td>Institution S</td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 20"></td>
+              <td>Player 20</td>
+              <td>1550</td>
+              <td>62</td>
+              <td>Institution T</td>
+            </tr>
+            <tr>
+              <td>21</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 21"></td>
+              <td>Player 21</td>
+              <td>1500</td>
+              <td>60</td>
+              <td>Institution U</td>
+            </tr>
+            <tr>
+              <td>22</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 22"></td>
+              <td>Player 22</td>
+              <td>1450</td>
+              <td>58</td>
+              <td>Institution V</td>
+            </tr>
+            <tr>
+              <td>23</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 23"></td>
+              <td>Player 23</td>
+              <td>1400</td>
+              <td>56</td>
+              <td>Institution W</td>
+            </tr>
+            <tr>
+              <td>24</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 24"></td>
+              <td>Player 24</td>
+              <td>1350</td>
+              <td>54</td>
+              <td>Institution X</td>
+            </tr>
+            <tr>
+              <td>25</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 25"></td>
+              <td>Player 25</td>
+              <td>1300</td>
+              <td>52</td>
+              <td>Institution Y</td>
+            </tr>
+            <tr>
+              <td>26</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 26"></td>
+              <td>Player 26</td>
+              <td>1250</td>
+              <td>50</td>
+              <td>Institution Z</td>
+            </tr>
+            <tr>
+              <td>27</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 27"></td>
+              <td>Player 27</td>
+              <td>1200</td>
+              <td>48</td>
+              <td>Institution AA</td>
+            </tr>
+            <tr>
+              <td>28</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 28"></td>
+              <td>Player 28</td>
+              <td>1150</td>
+              <td>46</td>
+              <td>Institution AB</td>
+            </tr>
+            <tr>
+              <td>29</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 29"></td>
+              <td>Player 29</td>
+              <td>1100</td>
+              <td>44</td>
+              <td>Institution AC</td>
+            </tr>
+            <tr>
+              <td>30</td>
+              <td><img src="https://via.placeholder.com/50" alt="Player 30"></td>
+              <td>Player 30</td>
+              <td>1050</td>
+              <td>42</td>
+              <td>Institution AD</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container">
+        <footer class="py-5">
+          <div class="row">
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Section</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Blog</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact</a></li>
+              </ul>
+            </div>
+      
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Section</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Leadersboard</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sponship</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Chess lesson</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Game rule</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Find tutor</a></li>
+              </ul>
+            </div>
+      
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Section</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">online practice</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Events center</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Categories</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Chess influencers </a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Competitions</a></li>
+              </ul>
+            </div>
+      
+            <div class="col-md-5 offset-md-1 mb-3">
+              <form>
+                <h5>Subscribe to our newsletter</h5>
+                <p>Monthly digest of what's new and exciting from us.</p>
+                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                  <label for="newsletter1" class="visually-hidden">Email address</label>
+                  <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                  <button class="btn btn-primary" color="#ffc107" type="button">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
+      
+          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+            <p>&copy; 2024 Company, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+              <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                    <use xlink:href="#twitter" />
+                  </svg></a></li>
+              <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                    <use xlink:href="#instagram" />
+                  </svg></a></li>
+              <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                    <use xlink:href="#facebook" />
+                  </svg></a></li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </body>
+    
+    </html>
+
+  

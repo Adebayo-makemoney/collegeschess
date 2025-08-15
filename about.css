@@ -1,0 +1,218 @@
+.mainabout {
+    width: 100%;
+    height: 100%;
+background: #0a0909d8;
+    display: flex;
+    justify-content: center;
+}
+
+.about {
+    width: 90%;
+    height: auto;
+    
+    margin-top: 100px;
+}
+h2{
+padding-left: 0;
+padding-top: 50px;
+padding-bottom: 70px;
+color: #1111107e;
+font-size: 40px;
+}
+h1{
+letter-spacing: 3px;
+word-spacing: 2px;
+font-family: serif;
+color: rgba(0, 0, 0, 0.918);
+line-gap: 10px;
+font-size: 45px;
+font-weight: bold;
+}
+.textimg{
+width: 100%;
+height: auto;
+display: grid;
+gap: 20px;
+grid-template-columns: 2fr 1fr;
+margin-top: 100px;
+}
+.sec1{
+
+
+
+}
+.sec2 {
+    
+
+
+
+}
+#about{
+font-size: 20px;
+
+
+}
+.sec2img{
+width: 100%;
+height: 100%;
+border-radius: 10px;
+}
+.mainimpact{
+width: 100%;
+display: flex;
+justify-content: center;
+background-color: rgba(250, 235, 215, 0.541);
+padding-bottom: 50px;
+margin-top: 100px;
+margin-bottom: 100px;
+}
+.ourimpact{
+    width: 90%;
+display: grid;
+    grid-template-columns: 2fr 1fr;
+
+
+}
+h3{
+margin: 100px 0;
+font-size: 70px;
+
+}
+
+.impactimg{
+
+display: grid;
+grid-template-columns: 1fr;
+row-gap: 10px;
+}
+h6{
+font-size: 25px;
+font-weight: 60px;
+}
+
+
+
+
+
+
+.impactimg1{
+width: 100%;
+
+margin-top:270px ;
+border-radius: 10px;
+}
+.impactimg2{
+width: 100%;
+border-radius: 10px;
+
+}
+.ouridentity{
+width: 95%;
+padding: 80px;
+padding-right: 0;
+}
+.idimg{
+width: 350px;
+height: 259px;
+border-radius: 10px;
+margin-right: 40px;
+}
+p{
+
+font-size: 25px;
+
+}
+.idtext{
+width: 100%;
+display: grid;
+grid-template-columns: 1fr 3fr;
+}
+#identity{
+    margin-left: 90px;
+    font-size: 60px;
+}
+.executive{
+color: black;
+padding-bottom: 20px;
+
+}
+#executive{
+height: 320px;
+width: 300px;
+border-radius: 10px;
+}
+.iconmain{
+width: 100%;
+height: auto;
+display: flex;
+justify-content: center;
+}
+.icon{
+width: 1300px;
+background-color: rgba(202, 198, 193, 0.747);
+height:370px;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+}
+.idicon{
+width: 300px;
+height: 300px;
+}
+b{
+font-size: 35px;
+}
+.icontext{
+width: 300px;
+height: 350px;
+}
+.team{
+width: 300px;
+height: 300px;
+border-radius:10px ;
+}
+.teambio{
+
+width: 300px;
+    height: 300px;
+position: relative;
+}
+.name{
+    width: 100%;
+        height: ;
+position: absolute;
+right: 100px;
+top: 100px;
+left: 0;
+background-color: rgba(10, 10, 10, 0.774);
+color: aqua;
+opacity:0 ;
+
+font-size:larger;
+transition: 1s;
+}
+.name:hover{
+opacity: 100%;
+background: rgba(15, 15, 15, 0.959);
+}
+.featured{
+width: 90%;
+height: 300px;
+background: green;
+border-radius: 10px;
+margin-top: -20px;
+}
+.button{
+width: 250px;
+height: 60px;
+color: white;
+border-radius: 40px;
+background-color: green;
+margin-bottom:-200px;
+border: none;
+border: 1px solid gray;
+}
+h4{
+font-size: xx-large;
+
+}
